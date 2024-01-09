@@ -6,3 +6,12 @@ func _physics_process(delta):
 		var target: CharacterBody2D = enemiesInRange.front()
 		look_at(target.global_position)
 		
+func shoot():
+	const BULLET = preload("res://bullet.tscn")
+	var nb = BULLET.instantiate() # new bullet
+	nb.global_position = %ShootingPoint.global_position
+	nb.global_rotation = %ShootingPoint.global_rotation
+	%ShootingPoint.add_child(nb)
+
+func _on_timer_timeout():
+	shoot()

@@ -6,3 +6,7 @@ res://mob.tscn
 res://mob.gd
 res://gun.tscn
 res://gun.gd
+res://Bullet.gd
+res://bullet.tscn
+res://characters/slime/slime.tscn
+res://game.gd
