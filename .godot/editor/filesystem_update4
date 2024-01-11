@@ -10,3 +10,5 @@ res://Bullet.gd
 res://bullet.tscn
 res://characters/slime/slime.tscn
 res://game.gd
+res://mob_boss.tscn
+res://mob_boss.gd

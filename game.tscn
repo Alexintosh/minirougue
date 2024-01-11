@@ -58,7 +58,8 @@ position = Vector2(1112, 863)
 position = Vector2(1616, 779)
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.23
+unique_name_in_owner = true
+wait_time = 0.347
 autostart = true
 
 [node name="GameOver" type="CanvasLayer" parent="."]
