@@ -6,7 +6,7 @@
 
 [sub_resource type="Curve2D" id="Curve2D_jw5jl"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -351, -254, 0, 0, 0, 0, 2157, -249, 0, 0, 0, 0, 2175, 1277, 0, 0, 0, 0, -346, 1293, 0, 0, 0, 0, -351, -254)
+"points": PackedVector2Array(0, 0, 0, 0, -653, -565, 0, 0, 0, 0, 2193.03, -576.287, 0, 0, 0, 0, 2175, 1277, 0, 0, 0, 0, -690.787, 1298.21, 0, 0, 0, 0, -666.741, -558.054)
 }
 point_count = 5
 
@@ -28,13 +28,14 @@ color = Color(0.741176, 0.937255, 0.886275, 1)
 position = Vector2(891, 592)
 
 [node name="Path2D" type="Path2D" parent="Player"]
-position = Vector2(-891, -592)
+position = Vector2(-783.629, -543.247)
+scale = Vector2(1.16443, 1.15178)
 curve = SubResource("Curve2D_jw5jl")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Player/Path2D"]
 unique_name_in_owner = true
-position = Vector2(-351, -254)
-rotation = 0.00199362
+position = Vector2(-653, -565)
+rotation = -0.00396582
 
 [node name="PineTree" parent="." instance=ExtResource("2_wg8d5")]
 position = Vector2(1466, 325)
@@ -59,7 +60,7 @@ position = Vector2(1616, 779)
 
 [node name="Timer" type="Timer" parent="."]
 unique_name_in_owner = true
-wait_time = 0.347
+wait_time = 0.71
 autostart = true
 
 [node name="GameOver" type="CanvasLayer" parent="."]
@@ -92,4 +93,5 @@ theme_override_font_sizes/font_size = 143
 text = "Game Over"
 
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
+[connection signal="loot_collected" from="Player" to="." method="_on_player_loot_collected"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

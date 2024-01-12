@@ -118,7 +118,12 @@ move_down={
 
 [layer_names]
 
+2d_render/layer_1="mobs"
+2d_render/layer_3="drop"
+2d_physics/layer_1="Player"
+2d_physics/layer_2="mobs"
 3d_physics/layer_2="player"
+2d_physics/layer_3="Loot"
 
 [rendering]
 

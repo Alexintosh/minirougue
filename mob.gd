@@ -22,11 +22,11 @@ func take_damage():
 	%Slime.play_hurt()
 	
 	if(health <= 0): 
-		queue_free()
-		enemy_dead.emit(points_to_player, label)
+		enemy_dead.emit(points_to_player, label, global_position)
 		
-	const EXPLOSION = preload("res://smoke_explosion/smoke_explosion.tscn")
-	var smoke = EXPLOSION.instantiate()
-	
-	get_parent().add_child(smoke)
-	smoke.global_position = global_position
+		const EXPLOSION = preload("res://smoke_explosion/smoke_explosion.tscn")
+		var smoke = EXPLOSION.instantiate()
+		
+		get_parent().add_child(smoke)
+		smoke.global_position = global_position
+		queue_free()

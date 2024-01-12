@@ -12,3 +12,8 @@ res://characters/slime/slime.tscn
 res://game.gd
 res://mob_boss.tscn
 res://mob_boss.gd
+res://gem.tscn
+res://gem.gd
+res://lootable.gd
+res://health_drop.tscn
+res://heart_loot.tscn

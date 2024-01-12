@@ -1,6 +1,5 @@
 extends Area2D
 
-
 var travelledDistance = 0
 
 func _physics_process(delta):	
