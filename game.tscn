@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://cohc61yi1xwo4"]
+[gd_scene load_steps=5 format=3 uid="uid://cohc61yi1xwo4"]
 
 [ext_resource type="PackedScene" uid="uid://c1u2x72vwu7s5" path="res://player.tscn" id="1_a052d"]
 [ext_resource type="Script" path="res://game.gd" id="1_kolfk"]
-[ext_resource type="PackedScene" uid="uid://bakkjka35yw1j" path="res://pine_tree.tscn" id="2_wg8d5"]
 
 [sub_resource type="Curve2D" id="Curve2D_jw5jl"]
 _data = {
@@ -25,6 +24,7 @@ offset_bottom = 1079.0
 color = Color(0.741176, 0.937255, 0.886275, 1)
 
 [node name="Player" parent="." instance=ExtResource("1_a052d")]
+unique_name_in_owner = true
 position = Vector2(891, 592)
 
 [node name="Path2D" type="Path2D" parent="Player"]
@@ -36,27 +36,6 @@ curve = SubResource("Curve2D_jw5jl")
 unique_name_in_owner = true
 position = Vector2(-653, -565)
 rotation = -0.00396582
-
-[node name="PineTree" parent="." instance=ExtResource("2_wg8d5")]
-position = Vector2(1466, 325)
-
-[node name="PineTree2" parent="." instance=ExtResource("2_wg8d5")]
-position = Vector2(1530, 399)
-
-[node name="PineTree3" parent="." instance=ExtResource("2_wg8d5")]
-position = Vector2(1569, 273)
-
-[node name="PineTree4" parent="." instance=ExtResource("2_wg8d5")]
-position = Vector2(292, 887)
-
-[node name="PineTree5" parent="." instance=ExtResource("2_wg8d5")]
-position = Vector2(284, 263)
-
-[node name="PineTree6" parent="." instance=ExtResource("2_wg8d5")]
-position = Vector2(1112, 863)
-
-[node name="PineTree7" parent="." instance=ExtResource("2_wg8d5")]
-position = Vector2(1616, 779)
 
 [node name="Timer" type="Timer" parent="."]
 unique_name_in_owner = true
@@ -91,6 +70,9 @@ grow_vertical = 2
 theme_override_fonts/font = SubResource("SystemFont_c7xr5")
 theme_override_font_sizes/font_size = 143
 text = "Game Over"
+
+[node name="TreeContainer" type="Node2D" parent="."]
+unique_name_in_owner = true
 
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
 [connection signal="loot_collected" from="Player" to="." method="_on_player_loot_collected"]

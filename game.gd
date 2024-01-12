@@ -15,6 +15,7 @@ var gameover = false
 
 func _ready():
 	spawn()
+	add_tress()
 	
 func spawn():	
 	print("mobs_alive", mobs_alive)
@@ -53,8 +54,7 @@ func spawn_boss():
 	mobs_alive = mobs_alive + 1
 
 func _on_timer_timeout():
-	pass
-	#spawn()
+	spawn()
 
 func _on_player_health_depleted():
 	gameover = true
@@ -107,4 +107,29 @@ func restart_game():
 
 func _on_player_loot_collected(value):
 	gems += value
+	
+	if(gems % 2 == 0) :
+		%Player/Gun.decrease_shooting_frequency(0.03)
 	print(gems)
+
+func add_tress():
+	var viewport_size = get_viewport().content_scale_size
+
+	# Number of trees to create
+	var num_trees = 1000
+	# Minimum and maximum positions for tree placement
+	var min_pos = Vector2(-10000, -10000)
+	var max_pos = Vector2(10000, 10000)
+
+	for i in range(num_trees):
+		# Instance a new tree
+		var tree = preload("res://pine_tree.tscn").instantiate()
+		
+		# Randomly position the tree
+		tree.position = Vector2(
+			randf_range(min_pos.x, max_pos.x),
+			randf_range(min_pos.y, max_pos.y)
+		)
+
+		# Add the tree to the CanvasLayer
+		%TreeContainer.add_child(tree)

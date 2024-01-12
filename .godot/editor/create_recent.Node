@@ -1,9 +1,9 @@
+Node2D
 RayCast2D
 StaticBody2D
 RigidBody2D
 Area2D
 Sprite2D
-Node2D
 CollisionShape2D
 AnimationPlayer
 Polygon2D
@@ -12,4 +12,3 @@ AnimationTree
 Label
 ColorRect
 CanvasLayer
-Timer

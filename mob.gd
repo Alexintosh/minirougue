@@ -29,4 +29,4 @@ func take_damage():
 		
 		get_parent().add_child(smoke)
 		smoke.global_position = global_position
-		queue_free()
+		call_deferred("queue_free")
